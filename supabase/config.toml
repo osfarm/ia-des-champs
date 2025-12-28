@@ -1,1 +1,4 @@
 project_id = "dstmenrahhbhgvptchfa"
+
+[functions.chat-mistral]
+verify_jwt = false
