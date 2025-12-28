@@ -8,6 +8,7 @@ import Glossaire from "./pages/Glossaire";
 import TermePage from "./pages/TermePage";
 import Auteurs from "./pages/Auteurs";
 import NotFound from "./pages/NotFound";
+import Chatbot from "./components/Chatbot";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <Chatbot />
     </TooltipProvider>
   </QueryClientProvider>
 );
