@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { MessageCircle, X, Send, Loader2, Bot, User } from "lucide-react";
+import { MessageCircle, X, Send, Loader2, Bot, User, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type Message = {
@@ -11,6 +11,14 @@ type Message = {
 };
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/chat-mistral`;
+
+const SUGGESTED_QUESTIONS = [
+  "De quoi parle le livre ?",
+  "Qui sont les auteurs ?",
+  "Qu'est-ce que le projet GAIA ?",
+  "C'est quoi l'IA générative en agriculture ?",
+  "Quels sont les défis abordés ?",
+];
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +30,7 @@ export default function Chatbot() {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [showSuggestions, setShowSuggestions] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -30,13 +39,15 @@ export default function Chatbot() {
     }
   }, [messages]);
 
-  const sendMessage = async () => {
-    if (!input.trim() || isLoading) return;
+  const sendMessage = async (messageText?: string) => {
+    const text = messageText || input.trim();
+    if (!text || isLoading) return;
 
-    const userMessage: Message = { role: "user", content: input.trim() };
+    const userMessage: Message = { role: "user", content: text };
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsLoading(true);
+    setShowSuggestions(false);
 
     let assistantContent = "";
 
@@ -115,6 +126,10 @@ export default function Chatbot() {
     }
   };
 
+  const handleSuggestionClick = (question: string) => {
+    sendMessage(question);
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -187,6 +202,28 @@ export default function Chatbot() {
                 )}
               </div>
             ))}
+            
+            {/* Suggestions */}
+            {showSuggestions && messages.length === 1 && !isLoading && (
+              <div className="mt-2">
+                <div className="flex items-center gap-1 mb-2 text-xs text-muted-foreground">
+                  <Sparkles className="h-3 w-3" />
+                  <span>Questions suggérées</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {SUGGESTED_QUESTIONS.map((question, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleSuggestionClick(question)}
+                      className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1.5 text-xs text-foreground hover:bg-primary/10 hover:border-primary/40 transition-colors"
+                    >
+                      {question}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+            
             {isLoading && messages[messages.length - 1]?.role === "user" && (
               <div className="flex gap-2">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10">
@@ -213,7 +250,7 @@ export default function Chatbot() {
               className="flex-1"
             />
             <Button
-              onClick={sendMessage}
+              onClick={() => sendMessage()}
               disabled={!input.trim() || isLoading}
               size="icon"
               className="shrink-0"
