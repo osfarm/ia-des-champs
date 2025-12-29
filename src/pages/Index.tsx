@@ -32,9 +32,22 @@ export default function Index() {
                 L'IA des Champs
               </h1>
               
-              <p className="text-xl md:text-2xl text-muted-foreground mb-4">
+              <p className="text-xl md:text-2xl text-muted-foreground mb-6">
                 Une autre culture de l'IA
               </p>
+              
+              {/* Video */}
+              <div className="mb-8 max-w-2xl mx-auto">
+                <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+                  <iframe
+                    src="https://www.youtube.com/embed/u6ANwRHAYGU"
+                    title="L'IA des Champs - Présentation"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
+              </div>
               
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
                 Découvrez comment l'intelligence artificielle transforme l'agriculture. Un glossaire complet de 251 termes pour comprendre les enjeux de demain.
