@@ -22,6 +22,9 @@ export function Header() {
           <Link to="/glossaire" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             Glossaire
           </Link>
+          <Link to="/lexique" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            Lexique Vidéo
+          </Link>
           <Link to="/auteurs" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             Auteurs
           </Link>
@@ -59,6 +62,13 @@ export function Header() {
             onClick={() => setIsMenuOpen(false)}
           >
             Glossaire
+          </Link>
+          <Link 
+            to="/lexique" 
+            className="block text-sm font-medium text-muted-foreground hover:text-foreground"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Lexique Vidéo
           </Link>
           <Link 
             to="/auteurs" 
