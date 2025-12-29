@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Glossaire from "./pages/Glossaire";
 import TermePage from "./pages/TermePage";
+import Lexique from "./pages/Lexique";
+import LexiqueTermePage from "./pages/LexiqueTermePage";
 import Auteurs from "./pages/Auteurs";
 import NotFound from "./pages/NotFound";
 import Chatbot from "./components/Chatbot";
@@ -22,6 +24,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/glossaire" element={<Glossaire />} />
           <Route path="/glossaire/:id" element={<TermePage />} />
+          <Route path="/lexique" element={<Lexique />} />
+          <Route path="/lexique/:id" element={<LexiqueTermePage />} />
           <Route path="/auteurs" element={<Auteurs />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
