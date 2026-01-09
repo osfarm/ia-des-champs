@@ -60,6 +60,12 @@ export default function Index() {
                 <Button asChild variant="outline" size="lg">
                   <Link to="/glossaire">
                     <Search className="mr-2 h-5 w-5" />
+                    Explorer le lexique vidéo
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link to="/glossaire">
+                    <Search className="mr-2 h-5 w-5" />
                     Explorer le glossaire
                   </Link>
                 </Button>
@@ -77,9 +83,9 @@ export default function Index() {
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                     <Brain className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="font-semibold text-lg mb-2">251 termes expliqués</h3>
+                  <h3 className="font-semibold text-lg mb-2">251 termes illustrés</h3>
                   <p className="text-muted-foreground">
-                    De l'algorithme aux zones humides, un glossaire complet pour maîtriser le vocabulaire de l'IA
+                    De l'algorithme aux zones humides, un lexique vidéo complet pour maîtriser le vocabulaire de l'IA
                     agricole.
                   </p>
                 </CardContent>
@@ -117,7 +123,6 @@ export default function Index() {
           <div className="container">
             <div className="text-center mb-12">
               <h2 className="font-serif text-3xl font-bold mb-4">Aperçu du glossaire</h2>
-              <p className="text-muted-foreground">Quelques termes parmi les 251 du livre</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -135,7 +140,7 @@ export default function Index() {
 
             <div className="text-center mt-8">
               <Button asChild variant="outline">
-                <Link to="/glossaire">Voir les 251 termes</Link>
+                <Link to="/glossaire">Voir les élèments du glossaire</Link>
               </Button>
             </div>
           </div>
