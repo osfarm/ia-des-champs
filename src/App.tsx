@@ -22,10 +22,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/glossaire" element={<Glossaire />} />
-          <Route path="/glossaire/:id" element={<TermePage />} />
           <Route path="/lexique" element={<Lexique />} />
           <Route path="/lexique/:id" element={<LexiqueTermePage />} />
+          <Route path="/glossaire" element={<Glossaire />} />
+          <Route path="/glossaire/:id" element={<TermePage />} />
           <Route path="/auteurs" element={<Auteurs />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
