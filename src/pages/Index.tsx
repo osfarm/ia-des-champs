@@ -46,7 +46,7 @@ export default function Index() {
               </div>
 
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Découvrez comment l'intelligence artificielle transforme l'agriculture. Un glossaire complet de 251
+                Découvrez comment l'intelligence artificielle transforme l'agriculture. Un lexique video complet de 251
                 termes pour comprendre les enjeux de demain.
               </p>
 
