@@ -19,13 +19,22 @@ export function Header() {
           <Link to="/" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             Accueil
           </Link>
-          <Link to="/glossaire" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-            Glossaire
-          </Link>
-          <Link to="/lexique" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+          <Link
+            to="/lexique"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
             Lexique Vidéo
           </Link>
-          <Link to="/auteurs" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+          <Link
+            to="/glossaire"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Glossaire
+          </Link>
+          <Link
+            to="/auteurs"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
             Auteurs
           </Link>
           <Button asChild className="bg-primary hover:bg-primary/90">
@@ -37,11 +46,7 @@ export function Header() {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden p-2"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Menu"
-        >
+        <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Menu">
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
@@ -49,29 +54,29 @@ export function Header() {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <nav className="md:hidden border-t border-border bg-background p-4 space-y-4">
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="block text-sm font-medium text-muted-foreground hover:text-foreground"
             onClick={() => setIsMenuOpen(false)}
           >
             Accueil
           </Link>
-          <Link 
-            to="/glossaire" 
-            className="block text-sm font-medium text-muted-foreground hover:text-foreground"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Glossaire
-          </Link>
-          <Link 
-            to="/lexique" 
+          <Link
+            to="/lexique"
             className="block text-sm font-medium text-muted-foreground hover:text-foreground"
             onClick={() => setIsMenuOpen(false)}
           >
             Lexique Vidéo
           </Link>
-          <Link 
-            to="/auteurs" 
+          <Link
+            to="/glossaire"
+            className="block text-sm font-medium text-muted-foreground hover:text-foreground"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Glossaire
+          </Link>
+          <Link
+            to="/auteurs"
             className="block text-sm font-medium text-muted-foreground hover:text-foreground"
             onClick={() => setIsMenuOpen(false)}
           >
