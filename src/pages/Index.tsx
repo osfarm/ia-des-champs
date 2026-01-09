@@ -58,7 +58,7 @@ export default function Index() {
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/glossaire">
+                  <Link to="/lexique">
                     <Search className="mr-2 h-5 w-5" />
                     Explorer le lexique vidéo
                   </Link>
