@@ -15,7 +15,7 @@ export function Footer() {
               Une autre culture de l'IA — Le livre qui réconcilie intelligence artificielle et agriculture.
             </p>
           </div>
-          
+
           <div>
             <h3 className="font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2 text-sm">
@@ -25,8 +25,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/glossaire" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Glossaire (251 termes)
+                <Link to="/lexique" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Lexique vidéo (251 termes)
                 </Link>
               </li>
               <li>
@@ -36,12 +36,12 @@ export function Footer() {
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="font-semibold mb-4">Éditeur</h3>
-            <a 
-              href="https://www.editions-france-agricole.fr" 
-              target="_blank" 
+            <a
+              href="https://www.editions-france-agricole.fr"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
@@ -50,7 +50,7 @@ export function Footer() {
             </a>
           </div>
         </div>
-        
+
         <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} L'IA des Champs. Tous droits réservés.</p>
         </div>
