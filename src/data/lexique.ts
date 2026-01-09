@@ -307,7 +307,27 @@ export const getTermById = (id: string): LexiqueTerm | undefined => {
   return lexiqueTerms.find(entry => entry.id === id);
 };
 
+// Alias pour compatibilité
+export const getLexiqueTermById = getTermById;
+
 // Fonction pour trouver une entrée par son slug (id)
 export const getTermBySlug = (slug: string): LexiqueTerm | undefined => {
   return lexiqueTerms.find(entry => entry.id === slug);
+};
+
+// Alias pour compatibilité avec les pages
+export const getAvailablePages = getUniquePages;
+export const getLexiqueTermsByPage = searchByPage;
+export const getLexiqueTermByIndex = searchByIndex;
+export const searchLexiqueTerms = searchByMot;
+
+// Fonction pour obtenir les termes adjacents (précédent et suivant)
+export const getAdjacentLexiqueTerms = (id: string): { prev: LexiqueTerm | null; next: LexiqueTerm | null } => {
+  const currentIndex = lexiqueTerms.findIndex(term => term.id === id);
+  if (currentIndex === -1) return { prev: null, next: null };
+  
+  return {
+    prev: currentIndex > 0 ? lexiqueTerms[currentIndex - 1] : null,
+    next: currentIndex < lexiqueTerms.length - 1 ? lexiqueTerms[currentIndex + 1] : null
+  };
 };
