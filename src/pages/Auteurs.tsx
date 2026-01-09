@@ -1,22 +1,28 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { User } from "lucide-react";
+
+import hervePillaud from "@/assets/herve-pillaud.jpg";
+import karineCailleaux from "@/assets/karine-cailleaux.jpg";
+import davidJoulin from "@/assets/david-joulin.png";
 
 const auteurs = [
   {
     nom: "Hervé Pillaud",
     role: "Agriculteur et auteur",
+    photo: hervePillaud,
     bio: "Hervé Pillaud est agriculteur en Vendée et passionné par les enjeux du numérique dans le monde agricole. Auteur de plusieurs ouvrages sur l'agriculture connectée, il s'intéresse depuis de nombreuses années à la transformation digitale du secteur agricole et à l'impact des nouvelles technologies sur les pratiques agricoles."
   },
   {
     nom: "Karine Cailleaux-Breton",
     role: "Experte en innovation agricole",
+    photo: karineCailleaux,
     bio: "Karine Cailleaux-Breton apporte son expertise sur les questions d'innovation et de transformation numérique dans le secteur agricole. Son regard croisé entre technologie et agriculture permet d'éclairer les enjeux de l'adoption de l'intelligence artificielle par les acteurs du monde rural."
   },
   {
     nom: "David Joulin",
     role: "Spécialiste des technologies",
+    photo: davidJoulin,
     bio: "David Joulin complète le trio d'auteurs avec sa connaissance approfondie des technologies de l'information et de la communication. Son expertise technique permet de vulgariser les concepts complexes de l'intelligence artificielle pour les rendre accessibles aux professionnels de l'agriculture."
   }
 ];
@@ -39,8 +45,12 @@ export default function Auteurs() {
             {auteurs.map((auteur) => (
               <Card key={auteur.nom} className="bg-card border-border">
                 <CardContent className="pt-8 text-center">
-                  <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mx-auto mb-6">
-                    <User className="h-12 w-12 text-muted-foreground" />
+                  <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-6">
+                    <img 
+                      src={auteur.photo} 
+                      alt={auteur.nom}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   
                   <h2 className="font-serif text-xl font-semibold mb-2">{auteur.nom}</h2>
