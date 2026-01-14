@@ -148,7 +148,7 @@ export default function Chatbot() {
         )}
         size="icon"
       >
-        {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
+        {isOpen ? <X className="h-6 w-6" /> : <Bot className="h-6 w-6" />}
       </Button>
 
       {/* Chat window */}
