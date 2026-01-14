@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { MessageCircle, X, Send, Loader2, Bot, User, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -138,18 +139,27 @@ export default function Chatbot() {
   };
 
   return (
-    <>
+    <TooltipProvider>
       {/* Floating button */}
-      <Button
-        onClick={() => setIsOpen(!isOpen)}
-        className={cn(
-          "fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full shadow-lg transition-all duration-300",
-          isOpen ? "bg-muted text-muted-foreground hover:bg-muted/80" : "bg-primary text-primary-foreground hover:bg-primary/90"
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            onClick={() => setIsOpen(!isOpen)}
+            className={cn(
+              "fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full shadow-lg transition-all duration-300",
+              isOpen ? "bg-muted text-muted-foreground hover:bg-muted/80" : "bg-primary text-primary-foreground hover:bg-primary/90"
+            )}
+            size="icon"
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Bot className="h-6 w-6" />}
+          </Button>
+        </TooltipTrigger>
+        {!isOpen && (
+          <TooltipContent side="left">
+            <p>Assistant IA</p>
+          </TooltipContent>
         )}
-        size="icon"
-      >
-        {isOpen ? <X className="h-6 w-6" /> : <Bot className="h-6 w-6" />}
-      </Button>
+      </Tooltip>
 
       {/* Chat window */}
       <div
@@ -264,6 +274,6 @@ export default function Chatbot() {
           </div>
         </div>
       </div>
-    </>
+    </TooltipProvider>
   );
 }
