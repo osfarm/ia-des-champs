@@ -145,33 +145,6 @@ export default function Index() {
           </div>
         </section>
 
-        {/* Featured Terms */}
-        <section className="py-16 bg-muted">
-          <div className="container">
-            <div className="text-center mb-12">
-              <h2 className="font-serif text-3xl font-bold mb-4">Aperçu du glossaire</h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {featuredTerms.map((term) => (
-                <Link key={term.id} to={`/glossaire/${term.id}`}>
-                  <Card className="h-full bg-card border-border hover:border-primary/50 transition-colors">
-                    <CardContent className="pt-6">
-                      <h3 className="font-semibold text-lg mb-2 text-primary">{term.mot}</h3>
-                      <p className="text-sm text-muted-foreground line-clamp-3">{term.definition}</p>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-
-            <div className="text-center mt-8">
-              <Button asChild variant="outline">
-                <Link to="/glossaire">Voir les élèments du glossaire</Link>
-              </Button>
-            </div>
-          </div>
-        </section>
       </main>
 
       <Footer />
