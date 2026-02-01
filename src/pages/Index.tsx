@@ -70,7 +70,7 @@ export default function Index() {
                     Explorer le glossaire
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg">
+                <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
                   <a 
                     href={`${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/data/CP_IA_des_champs_02022026.pdf`}
                     target="_blank" 
