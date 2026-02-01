@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { BookOpen, Search, Users, Leaf, Brain, Tractor } from "lucide-react";
+import { BookOpen, Search, Users, Leaf, Brain, Tractor, Download } from "lucide-react";
 import { glossaryTerms } from "@/data/glossary";
 import logoSia from "@/assets/logo-sia.png";
 
@@ -51,7 +51,7 @@ export default function Index() {
                 termes pour comprendre les enjeux de demain.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
                 <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
                   <a href="https://www.editions-france-agricole.fr" target="_blank" rel="noopener noreferrer">
                     <BookOpen className="mr-2 h-5 w-5" />
@@ -69,6 +69,17 @@ export default function Index() {
                     <Search className="mr-2 h-5 w-5" />
                     Explorer le glossaire
                   </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <a 
+                    href={`${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/data/CP_IA_des_champs_02022026.pdf`}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    download
+                  >
+                    <Download className="mr-2 h-5 w-5" />
+                    Communiqué de presse
+                  </a>
                 </Button>
               </div>
             </div>
