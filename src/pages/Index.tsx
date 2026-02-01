@@ -138,7 +138,7 @@ export default function Index() {
                       <img 
                         src="/logo-sia.png" 
                         alt="Logo Salon International de l'Agriculture" 
-                        className="w-16 h-16 object-contain rounded-lg"
+                        className="w-32 h-20 object-contain"
                       />
                     </a>
                     <div>
