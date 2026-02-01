@@ -118,6 +118,33 @@ export default function Index() {
           </div>
         </section>
 
+        {/* Meet Us Section */}
+        <section className="py-16 bg-muted">
+          <div className="container">
+            <div className="text-center mb-12">
+              <h2 className="font-serif text-3xl font-bold mb-4">Venez nous rencontrer</h2>
+            </div>
+
+            <div className="max-w-2xl mx-auto space-y-4">
+              <Card className="bg-card border-border">
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Users className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-1">Salon International de l'Agriculture</h3>
+                      <p className="text-muted-foreground">
+                        Samedi 21 Février à 15H sur le stand de La Ferme Digitale au SIA
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Featured Terms */}
         <section className="py-16 bg-muted">
           <div className="container">
