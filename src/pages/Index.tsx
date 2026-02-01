@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BookOpen, Search, Users, Leaf, Brain, Tractor } from "lucide-react";
 import { glossaryTerms } from "@/data/glossary";
+import logoSia from "@/assets/logo-sia.png";
 
 const featuredTerms = glossaryTerms.slice(0, 6);
 
@@ -136,7 +137,7 @@ export default function Index() {
                       className="flex-shrink-0"
                     >
                       <img 
-                        src="/logo-sia.png" 
+                        src={logoSia} 
                         alt="Logo Salon International de l'Agriculture" 
                         className="w-32 h-20 object-contain"
                       />
