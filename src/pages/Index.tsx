@@ -129,9 +129,18 @@ export default function Index() {
               <Card className="bg-card border-border">
                 <CardContent className="pt-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Users className="h-6 w-6 text-primary" />
-                    </div>
+                    <a 
+                      href="https://www.salon-agriculture.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex-shrink-0"
+                    >
+                      <img 
+                        src="/logo-sia.png" 
+                        alt="Logo Salon International de l'Agriculture" 
+                        className="w-16 h-16 object-contain rounded-lg"
+                      />
+                    </a>
                     <div>
                       <h3 className="font-semibold text-lg mb-1">Salon International de l'Agriculture</h3>
                       <p className="text-muted-foreground">
