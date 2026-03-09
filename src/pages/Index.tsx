@@ -53,7 +53,11 @@ export default function Index() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
                 <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-                  <a href="https://www.editions-france-agricole.fr" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://www.editions-france-agricole.fr/site/gfaed/NOUVEAUTES__gfaed.4464.46142__/fr/boutique/produit.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <BookOpen className="mr-2 h-5 w-5" />
                     Acheter le livre
                   </a>
@@ -71,9 +75,9 @@ export default function Index() {
                   </Link>
                 </Button>
                 <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-                  <a 
+                  <a
                     href={`${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/data/CP_IA_des_champs_02022026.pdf`}
-                    target="_blank" 
+                    target="_blank"
                     rel="noopener noreferrer"
                     download
                   >
@@ -141,15 +145,15 @@ export default function Index() {
               <Card className="bg-card border-border">
                 <CardContent className="pt-6">
                   <div className="flex items-start gap-4">
-                    <a 
-                      href="https://www.salon-agriculture.com" 
-                      target="_blank" 
+                    <a
+                      href="https://www.salon-agriculture.com"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="flex-shrink-0"
                     >
-                      <img 
-                        src={logoSia} 
-                        alt="Logo Salon International de l'Agriculture" 
+                      <img
+                        src={logoSia}
+                        alt="Logo Salon International de l'Agriculture"
                         className="w-32 h-20 object-contain"
                       />
                     </a>
@@ -165,7 +169,6 @@ export default function Index() {
             </div>
           </div>
         </section>
-
       </main>
 
       <Footer />
