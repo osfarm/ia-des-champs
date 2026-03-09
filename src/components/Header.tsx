@@ -38,7 +38,11 @@ export function Header() {
             Auteurs
           </Link>
           <Button asChild className="bg-primary hover:bg-primary/90">
-            <a href="https://www.editions-france-agricole.fr" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.editions-france-agricole.fr/site/gfaed/NOUVEAUTES__gfaed.4464.46142__/fr/boutique/produit.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <BookOpen className="mr-2 h-4 w-4" />
               Acheter le livre
             </a>
